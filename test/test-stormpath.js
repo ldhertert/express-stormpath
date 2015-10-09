@@ -9,12 +9,11 @@ var helpers = require('./helpers');
 describe('#init()', function() {
   it('should export stormpath.init when express-stormpath is required', function() {
     assert.doesNotThrow(function() {
-        require('../index').init;
+      require('../index').init;
     }, Error);
   });
 
   it('should should emit a stormpath.ready event when ready', function(done) {
-    var stormpath = require('../index');
 
     helpers.createApplication(helpers.createClient(), function(err, application) {
       if (err) {
@@ -39,7 +38,6 @@ describe('#init()', function() {
   });
 
   it('should not throw an error if a valid configuration is supplied', function(done) {
-    var stormpath = require('../index');
 
     helpers.createApplication(helpers.createClient(), function(err, application) {
       if (err) {
